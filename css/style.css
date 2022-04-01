@@ -1,0 +1,330 @@
+@charset "UTF-8";
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Semibold.woff2") format("woff2"), url("../fonts/Gilroy-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: MuseoCyrl;
+  font-display: swap;
+  src: url("../fonts/MuseoCyrl300.ttf") format("ttf"), url("../fonts/MuseoSansCyrl300.woff") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: MuseoCyrl;
+  font-display: swap;
+  src: url("../fonts/MuseoCyrl700.ttf") format("ttf"), url("../fonts/MuseoCyrl700.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #000;
+  line-height: 1;
+  font-family: "Gilroy";
+  font-size: 0.875rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "Gilroy";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=__container] {
+  max-width: 83.4375rem;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 0.9375rem;
+}
+
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+.test {
+  padding: 4.375rem 0px;
+  background: url(../img/main.jpg);
+}
+.test__title {
+  font-family: "MuseoCyrl";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 120%;
+  color: #122E50;
+  margin-bottom: 113px;
+  max-width: 614px;
+  position: relative;
+}
+.test__title span {
+  font-weight: 600;
+  color: #60BD6C;
+}
+.test__title::after {
+  content: "";
+  position: absolute;
+  bottom: -39px;
+  left: 0;
+  width: 153px;
+  height: 6px;
+  background-color: #60BD6C;
+}
+@media (max-width: 61.99875em) {
+  .test__title {
+    font-size: 36px;
+    margin-bottom: 70px;
+  }
+  .test__title::after {
+    bottom: -29px;
+    height: 4px;
+    width: 80px;
+  }
+}
+@media (max-width: 29.99875em) {
+  .test__title {
+    font-size: 18px;
+    max-width: 280pc;
+    margin-bottom: 54px;
+  }
+  .test__title::after {
+    bottom: -29px;
+    height: 4px;
+    width: 60px;
+  }
+}
+.test__items {
+  display: flex;
+  flex-wrap: wrap;
+}
+.test__item {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 0.8333333333;
+  line-height: 24px;
+  color: #122E50;
+  height: 121px;
+  width: 415px;
+  display: flex;
+  align-items: center;
+  border-left: 5px solid #60BD6C;
+  border-radius: 5px;
+  padding-left: 34px;
+  margin-bottom: 41px;
+}
+@media (max-width: 29.99875em) {
+  .test__item {
+    height: 75px;
+    margin-bottom: 18px;
+    border-left: 3px solid #60BD6C;
+  }
+}
+.test__item--icon {
+  width: 61px;
+  height: 61px;
+  margin-right: 1.8125rem;
+}
+@media (max-width: 61.99875em) {
+  .test__item--icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .test__item--icon {
+    width: 39px;
+    height: 39px;
+  }
+}
+.test__item--icon img {
+  width: 100%;
+  height: 100%;
+}
+.test__item--text {
+  max-width: 240px;
+  line-height: 120%;
+  color: #122E50;
+  font-size: 20px;
+}
+@media (max-width: 61.99875em) {
+  .test__item--text {
+    font-size: 17px;
+    max-width: 200px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .test__item--text {
+    font-size: 14px;
+    max-width: 150px;
+  }
+}
